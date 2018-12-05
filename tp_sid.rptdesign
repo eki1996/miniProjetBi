@@ -1009,12 +1009,14 @@
     </page-setup>
     <body>
         <grid id="11">
-            <property name="height">8.354166666666666in</property>
-            <property name="width">7.947916666666667in</property>
+            <property name="height">9.364583333333334in</property>
+            <property name="width">7.84375in</property>
             <column id="12">
-                <property name="width">5.229166666666667in</property>
+                <property name="width">3.4791666666666665in</property>
             </column>
-            <column id="13"/>
+            <column id="13">
+                <property name="width">4.229166666666667in</property>
+            </column>
             <row id="14">
                 <cell id="15">
                     <property name="colSpan">2</property>
@@ -1028,13 +1030,15 @@ PECHE ET ELEVAGE AU MAROC
                 </cell>
             </row>
             <row id="17">
-                <property name="height">4.979166666666667in</property>
+                <property name="height">2.71875in</property>
                 <cell id="18">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
                     <extended-item extensionName="Chart" id="84">
                         <xml-property name="xmlRepresentation"><![CDATA[<model:ChartWithAxes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute" xmlns:data="http://www.birt.eclipse.org/ChartModelData" xmlns:layout="http://www.birt.eclipse.org/ChartModelLayout" xmlns:model="http://www.birt.eclipse.org/ChartModel" xmlns:type="http://www.birt.eclipse.org/ChartModelType">
   <Version>2.6.1</Version>
-  <Type>Line Chart</Type>
-  <SubType>Overlay</SubType>
+  <Type>Tube Chart</Type>
+  <SubType>Stacked</SubType>
   <Block>
     <Children xsi:type="layout:TitleBlock">
       <Bounds>
@@ -1067,7 +1071,7 @@ PECHE ET ELEVAGE AU MAROC
       <Visible>true</Visible>
       <Label>
         <Caption>
-          <Value>Peche au Maroc</Value>
+          <Value>Elevage au Maroc</Value>
           <Font>
             <Size>16.0</Size>
             <Bold>true</Bold>
@@ -1298,7 +1302,7 @@ PECHE ET ELEVAGE AU MAROC
     </Outline>
     <Visible>true</Visible>
   </Block>
-  <Dimension>Two_Dimensional</Dimension>
+  <Dimension>Two_Dimensional_With_Depth</Dimension>
   <Units>Points</Units>
   <SeriesThickness>10.0</SeriesThickness>
   <ExtendedProperties>
@@ -1314,17 +1318,16 @@ PECHE ET ELEVAGE AU MAROC
       <SeriesDefinitionIndex>0</SeriesDefinitionIndex>
     </OrthogonalSampleData>
     <OrthogonalSampleData>
-      <DataSetRepresentation>12.0,8.0,24.0,16.0,20.0</DataSetRepresentation>
+      <DataSetRepresentation>42,91,62,9,21</DataSetRepresentation>
       <SeriesDefinitionIndex>1</SeriesDefinitionIndex>
     </OrthogonalSampleData>
     <OrthogonalSampleData>
-      <DataSetRepresentation>18.0,12.0,36.0,24.0,30.0</DataSetRepresentation>
+      <DataSetRepresentation>83,03,04,41,81</DataSetRepresentation>
       <SeriesDefinitionIndex>2</SeriesDefinitionIndex>
     </OrthogonalSampleData>
-    <OrthogonalSampleData>
-      <DataSetRepresentation>24.0,16.0,48.0,32.0,40.0</DataSetRepresentation>
-      <SeriesDefinitionIndex>3</SeriesDefinitionIndex>
-    </OrthogonalSampleData>
+    <AncillarySampleData>
+      <DataSetRepresentation>Series 1</DataSetRepresentation>
+    </AncillarySampleData>
   </SampleData>
   <Interactivity>
     <LegendBehavior>HighlightSerie</LegendBehavior>
@@ -1632,7 +1635,7 @@ PECHE ET ELEVAGE AU MAROC
             <Blue>0</Blue>
           </Entries>
         </SeriesPalette>
-        <Series xsi:type="type:LineSeries">
+        <Series xsi:type="type:BarSeries">
           <Visible>true</Visible>
           <Label>
             <Caption>
@@ -1664,32 +1667,24 @@ PECHE ET ELEVAGE AU MAROC
               <Bottom>0.0</Bottom>
               <Right>3.0</Right>
             </Insets>
-            <Visible>true</Visible>
+            <Visible>false</Visible>
           </Label>
           <DataDefinition>
-            <Definition>row[&quot;Effectif du cheptel (passage mars-avril) (En milliers de têtes)&quot;]</Definition>
+            <Definition>row[&quot;EffectifCaprins &quot;]</Definition>
             <Grouping>
               <GroupType>Text</GroupType>
               <AggregateExpression>Sum</AggregateExpression>
             </Grouping>
           </DataDefinition>
-          <SeriesIdentifier>Series 1</SeriesIdentifier>
+          <SeriesIdentifier>Effectif du Caprin</SeriesIdentifier>
           <DataPoint>
             <Components>
               <Type>Orthogonal_Value</Type>
-              <FormatSpecifier xsi:type="attribute:NumberFormatSpecifier">
-                <Prefix></Prefix>
-                <Suffix></Suffix>
-                <FractionDigits>2</FractionDigits>
-              </FormatSpecifier>
-            </Components>
-            <Components>
-              <Type>Base_Value</Type>
             </Components>
             <Separator>, </Separator>
           </DataPoint>
-          <LabelPosition>Above</LabelPosition>
-          <Stacked>false</Stacked>
+          <LabelPosition>Inside</LabelPosition>
+          <Stacked>true</Stacked>
           <Triggers>
             <Condition>onmouseover</Condition>
             <Action>
@@ -1700,73 +1695,8 @@ PECHE ET ELEVAGE AU MAROC
               </Value>
             </Action>
           </Triggers>
-          <CurveFitting>
-            <LineAttributes>
-              <Style>Solid</Style>
-              <Thickness>1</Thickness>
-              <Color>
-                <Transparency>255</Transparency>
-                <Red>0</Red>
-                <Green>0</Green>
-                <Blue>0</Blue>
-              </Color>
-              <Visible>true</Visible>
-            </LineAttributes>
-            <Label>
-              <Caption>
-                <Value></Value>
-                <Font>
-                  <Alignment/>
-                </Font>
-              </Caption>
-              <Background xsi:type="attribute:ColorDefinition">
-                <Transparency>0</Transparency>
-                <Red>255</Red>
-                <Green>255</Green>
-                <Blue>255</Blue>
-              </Background>
-              <Outline>
-                <Style>Solid</Style>
-                <Thickness>1</Thickness>
-                <Color>
-                  <Transparency>255</Transparency>
-                  <Red>0</Red>
-                  <Green>0</Green>
-                  <Blue>0</Blue>
-                </Color>
-                <Visible>false</Visible>
-              </Outline>
-              <Insets>
-                <Top>0.0</Top>
-                <Left>2.0</Left>
-                <Bottom>0.0</Bottom>
-                <Right>3.0</Right>
-              </Insets>
-              <Visible>false</Visible>
-            </Label>
-            <LabelAnchor>North</LabelAnchor>
-          </CurveFitting>
-          <Markers>
-            <Type>Box</Type>
-            <Size>4</Size>
-            <Visible>true</Visible>
-            <Outline>
-              <Visible>true</Visible>
-            </Outline>
-          </Markers>
-          <LineAttributes>
-            <Style>Solid</Style>
-            <Thickness>1</Thickness>
-            <Color>
-              <Transparency>255</Transparency>
-              <Red>0</Red>
-              <Green>0</Green>
-              <Blue>0</Blue>
-            </Color>
-            <Visible>true</Visible>
-          </LineAttributes>
-          <PaletteLineColor>true</PaletteLineColor>
-          <Curve>true</Curve>
+          <Translucent>false</Translucent>
+          <Riser>Tube</Riser>
         </Series>
         <Grouping>
           <GroupType>Text</GroupType>
@@ -1965,7 +1895,7 @@ PECHE ET ELEVAGE AU MAROC
             <Blue>218</Blue>
           </Entries>
         </SeriesPalette>
-        <Series xsi:type="type:LineSeries">
+        <Series xsi:type="type:BarSeries">
           <Visible>true</Visible>
           <Label>
             <Caption>
@@ -2007,15 +1937,15 @@ PECHE ET ELEVAGE AU MAROC
               <AggregateExpression>Sum</AggregateExpression>
             </Grouping>
           </DataDefinition>
-          <SeriesIdentifier>Series 2</SeriesIdentifier>
+          <SeriesIdentifier>Effectif du bovin</SeriesIdentifier>
           <DataPoint>
             <Components>
               <Type>Orthogonal_Value</Type>
             </Components>
             <Separator>, </Separator>
           </DataPoint>
-          <LabelPosition>Above</LabelPosition>
-          <Stacked>false</Stacked>
+          <LabelPosition>Inside</LabelPosition>
+          <Stacked>true</Stacked>
           <Triggers>
             <Condition>onmouseover</Condition>
             <Action>
@@ -2026,26 +1956,7 @@ PECHE ET ELEVAGE AU MAROC
               </Value>
             </Action>
           </Triggers>
-          <Markers>
-            <Type>Box</Type>
-            <Size>4</Size>
-            <Visible>true</Visible>
-            <Outline>
-              <Visible>true</Visible>
-            </Outline>
-          </Markers>
-          <LineAttributes>
-            <Style>Solid</Style>
-            <Thickness>1</Thickness>
-            <Color>
-              <Transparency>255</Transparency>
-              <Red>0</Red>
-              <Green>0</Green>
-              <Blue>0</Blue>
-            </Color>
-            <Visible>true</Visible>
-          </LineAttributes>
-          <PaletteLineColor>true</PaletteLineColor>
+          <Riser>Tube</Riser>
         </Series>
         <Grouping>
           <GroupType>Text</GroupType>
@@ -2244,7 +2155,7 @@ PECHE ET ELEVAGE AU MAROC
             <Blue>106</Blue>
           </Entries>
         </SeriesPalette>
-        <Series xsi:type="type:LineSeries">
+        <Series xsi:type="type:BarSeries">
           <Visible>true</Visible>
           <Label>
             <Caption>
@@ -2279,285 +2190,6 @@ PECHE ET ELEVAGE AU MAROC
             <Visible>false</Visible>
           </Label>
           <DataDefinition>
-            <Definition>row[&quot;EffectifCaprins &quot;]</Definition>
-            <Grouping>
-              <Enabled>false</Enabled>
-              <GroupType>Text</GroupType>
-              <AggregateExpression>Sum</AggregateExpression>
-            </Grouping>
-          </DataDefinition>
-          <SeriesIdentifier>Series 3</SeriesIdentifier>
-          <DataPoint>
-            <Components>
-              <Type>Orthogonal_Value</Type>
-            </Components>
-            <Separator>, </Separator>
-          </DataPoint>
-          <LabelPosition>Above</LabelPosition>
-          <Stacked>false</Stacked>
-          <Triggers>
-            <Condition>onmouseover</Condition>
-            <Action>
-              <Type>Show_Tooltip</Type>
-              <Value xsi:type="attribute:TooltipValue">
-                <Text></Text>
-                <Delay>200</Delay>
-              </Value>
-            </Action>
-          </Triggers>
-          <Markers>
-            <Type>Box</Type>
-            <Size>4</Size>
-            <Visible>true</Visible>
-            <Outline>
-              <Visible>true</Visible>
-            </Outline>
-          </Markers>
-          <LineAttributes>
-            <Style>Solid</Style>
-            <Thickness>1</Thickness>
-            <Color>
-              <Transparency>255</Transparency>
-              <Red>0</Red>
-              <Green>0</Green>
-              <Blue>0</Blue>
-            </Color>
-            <Visible>true</Visible>
-          </LineAttributes>
-          <PaletteLineColor>true</PaletteLineColor>
-        </Series>
-        <Grouping>
-          <GroupType>Text</GroupType>
-          <AggregateExpression>Sum</AggregateExpression>
-        </Grouping>
-      </SeriesDefinitions>
-      <SeriesDefinitions>
-        <Query>
-          <Definition></Definition>
-        </Query>
-        <SeriesPalette>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>255</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>64</Red>
-            <Green>128</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>128</Green>
-            <Blue>192</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>170</Red>
-            <Green>85</Green>
-            <Blue>85</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>128</Green>
-            <Blue>0</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>192</Red>
-            <Green>192</Green>
-            <Blue>192</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>255</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>192</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>7</Red>
-            <Green>146</Green>
-            <Blue>94</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>0</Red>
-            <Green>128</Green>
-            <Blue>255</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>128</Green>
-            <Blue>192</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>0</Red>
-            <Green>255</Green>
-            <Blue>255</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>128</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>0</Red>
-            <Green>128</Green>
-            <Blue>192</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>0</Green>
-            <Blue>255</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>64</Green>
-            <Blue>64</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>128</Green>
-            <Blue>64</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>80</Red>
-            <Green>240</Green>
-            <Blue>120</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>0</Red>
-            <Green>64</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>0</Green>
-            <Blue>64</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>0</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>128</Green>
-            <Blue>64</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>128</Red>
-            <Green>128</Green>
-            <Blue>128</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>128</Green>
-            <Blue>255</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>0</Red>
-            <Green>64</Green>
-            <Blue>0</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>0</Red>
-            <Green>0</Green>
-            <Blue>0</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>255</Green>
-            <Blue>255</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>255</Red>
-            <Green>128</Green>
-            <Blue>0</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>80</Red>
-            <Green>166</Green>
-            <Blue>218</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>242</Red>
-            <Green>88</Green>
-            <Blue>106</Blue>
-          </Entries>
-          <Entries xsi:type="attribute:ColorDefinition">
-            <Transparency>255</Transparency>
-            <Red>232</Red>
-            <Green>172</Green>
-            <Blue>57</Blue>
-          </Entries>
-        </SeriesPalette>
-        <Series xsi:type="type:LineSeries">
-          <Visible>true</Visible>
-          <Label>
-            <Caption>
-              <Value></Value>
-              <Font>
-                <Alignment/>
-              </Font>
-            </Caption>
-            <Background xsi:type="attribute:ColorDefinition">
-              <Transparency>0</Transparency>
-              <Red>255</Red>
-              <Green>255</Green>
-              <Blue>255</Blue>
-            </Background>
-            <Outline>
-              <Style>Solid</Style>
-              <Thickness>1</Thickness>
-              <Color>
-                <Transparency>255</Transparency>
-                <Red>0</Red>
-                <Green>0</Green>
-                <Blue>0</Blue>
-              </Color>
-              <Visible>false</Visible>
-            </Outline>
-            <Insets>
-              <Top>0.0</Top>
-              <Left>2.0</Left>
-              <Bottom>0.0</Bottom>
-              <Right>3.0</Right>
-            </Insets>
-            <Visible>true</Visible>
-          </Label>
-          <DataDefinition>
             <Definition>row[&quot;EffectifOvins &quot;]</Definition>
             <Grouping>
               <Enabled>false</Enabled>
@@ -2565,15 +2197,15 @@ PECHE ET ELEVAGE AU MAROC
               <AggregateExpression>Sum</AggregateExpression>
             </Grouping>
           </DataDefinition>
-          <SeriesIdentifier>Series 4</SeriesIdentifier>
+          <SeriesIdentifier>Effectif d'ovin</SeriesIdentifier>
           <DataPoint>
             <Components>
               <Type>Orthogonal_Value</Type>
             </Components>
             <Separator>, </Separator>
           </DataPoint>
-          <LabelPosition>Above</LabelPosition>
-          <Stacked>false</Stacked>
+          <LabelPosition>Inside</LabelPosition>
+          <Stacked>true</Stacked>
           <Triggers>
             <Condition>onmouseover</Condition>
             <Action>
@@ -2584,26 +2216,7 @@ PECHE ET ELEVAGE AU MAROC
               </Value>
             </Action>
           </Triggers>
-          <Markers>
-            <Type>Box</Type>
-            <Size>4</Size>
-            <Visible>true</Visible>
-            <Outline>
-              <Visible>true</Visible>
-            </Outline>
-          </Markers>
-          <LineAttributes>
-            <Style>Solid</Style>
-            <Thickness>1</Thickness>
-            <Color>
-              <Transparency>255</Transparency>
-              <Red>0</Red>
-              <Green>0</Green>
-              <Blue>0</Blue>
-            </Color>
-            <Visible>true</Visible>
-          </LineAttributes>
-          <PaletteLineColor>true</PaletteLineColor>
+          <Riser>Tube</Riser>
         </Series>
         <Grouping>
           <GroupType>Text</GroupType>
@@ -2716,6 +2329,386 @@ PECHE ET ELEVAGE AU MAROC
       <PrimaryAxis>true</PrimaryAxis>
       <Percent>false</Percent>
     </AssociatedAxes>
+    <AncillaryAxes>
+      <Type>Text</Type>
+      <Title>
+        <Caption>
+          <Value>Z-Axis Title</Value>
+          <Font>
+            <Size>14.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Below</TitlePosition>
+      <SeriesDefinitions>
+        <Query>
+          <Definition></Definition>
+        </Query>
+        <SeriesPalette>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>166</Green>
+            <Blue>218</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>242</Red>
+            <Green>88</Green>
+            <Blue>106</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>232</Red>
+            <Green>172</Green>
+            <Blue>57</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>64</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>170</Red>
+            <Green>85</Green>
+            <Blue>85</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>192</Red>
+            <Green>192</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>192</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>7</Red>
+            <Green>146</Green>
+            <Blue>94</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>64</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>240</Green>
+            <Blue>120</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>0</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+        </SeriesPalette>
+        <Series>
+          <Visible>true</Visible>
+          <Label>
+            <Caption>
+              <Value></Value>
+              <Font>
+                <Alignment/>
+              </Font>
+            </Caption>
+            <Background xsi:type="attribute:ColorDefinition">
+              <Transparency>0</Transparency>
+              <Red>255</Red>
+              <Green>255</Green>
+              <Blue>255</Blue>
+            </Background>
+            <Outline>
+              <Style>Solid</Style>
+              <Thickness>1</Thickness>
+              <Color>
+                <Transparency>255</Transparency>
+                <Red>0</Red>
+                <Green>0</Green>
+                <Blue>0</Blue>
+              </Color>
+              <Visible>false</Visible>
+            </Outline>
+            <Insets>
+              <Top>0.0</Top>
+              <Left>2.0</Left>
+              <Bottom>0.0</Bottom>
+              <Right>3.0</Right>
+            </Insets>
+            <Visible>false</Visible>
+          </Label>
+          <SeriesIdentifier></SeriesIdentifier>
+          <DataPoint>
+            <Components>
+              <Type>Orthogonal_Value</Type>
+            </Components>
+            <Separator>, </Separator>
+          </DataPoint>
+          <LabelPosition>Outside</LabelPosition>
+          <Stacked>false</Stacked>
+        </Series>
+        <Grouping>
+          <GroupType>Text</GroupType>
+          <AggregateExpression>Sum</AggregateExpression>
+        </Grouping>
+      </SeriesDefinitions>
+      <Orientation>Horizontal</Orientation>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Visible>true</Visible>
+      </LineAttributes>
+      <Label>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+      <LabelPosition>Below</LabelPosition>
+      <MajorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>true</Visible>
+        </TickAttributes>
+      </MajorGrid>
+      <MinorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </TickAttributes>
+      </MinorGrid>
+      <Scale>
+        <MinorGridsPerUnit>5</MinorGridsPerUnit>
+      </Scale>
+      <Origin>
+        <Type>Min</Type>
+        <Value xsi:type="data:NumberDataElement">
+          <Value>0.0</Value>
+        </Value>
+      </Origin>
+      <PrimaryAxis>true</PrimaryAxis>
+      <Percent>false</Percent>
+    </AncillaryAxes>
     <SeriesDefinitions>
       <Query>
         <Definition></Definition>
@@ -3082,8 +3075,8 @@ PECHE ET ELEVAGE AU MAROC
 ]]></xml-property>
                         <property name="outputFormat">SVG</property>
                         <property name="inheritColumns">false</property>
-                        <property name="height">170.25pt</property>
-                        <property name="width">367.5pt</property>
+                        <property name="height">162pt</property>
+                        <property name="width">251.25pt</property>
                         <property name="dataSet">peche et elevage</property>
                         <list-property name="boundDataColumns">
                             <structure>
@@ -3232,6 +3225,206 @@ PECHE ET ELEVAGE AU MAROC
                             </structure>
                         </list-property>
                     </extended-item>
+                </cell>
+                <cell id="127">
+                    <table id="86">
+                        <property name="width">4.114583333333333in</property>
+                        <property name="dataSet">peche et elevage</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Années</property>
+                                <text-property name="displayName">Années</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Années"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</property>
+                                <text-property name="displayName">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Effectif du cheptel (passage mars-avril) (En milliers de têtes)"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Effectif Bovins </property>
+                                <text-property name="displayName">Effectif Bovins </text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Effectif Bovins "]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EffectifOvins </property>
+                                <text-property name="displayName">EffectifOvins </text-property>
+                                <expression name="expression" type="javascript">dataSetRow["EffectifOvins "]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EffectifCaprins </property>
+                                <text-property name="displayName">EffectifCaprins </text-property>
+                                <expression name="expression" type="javascript">dataSetRow["EffectifCaprins "]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <column id="115">
+                            <property name="width">0.4791666666666667in</property>
+                        </column>
+                        <column id="116">
+                            <property name="width">0.8125in</property>
+                        </column>
+                        <column id="117">
+                            <property name="width">1.25in</property>
+                        </column>
+                        <column id="118">
+                            <property name="width">0.75in</property>
+                        </column>
+                        <column id="119">
+                            <property name="width">0.8229166666666666in</property>
+                        </column>
+                        <header>
+                            <row id="87">
+                                <property name="height">0.3854166666666667in</property>
+                                <cell id="88">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <label id="89">
+                                        <text-property name="text">Années</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="90">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <label id="91">
+                                        <text-property name="text">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="92">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <label id="93">
+                                        <text-property name="text">Effectif Bovins </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="94">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <label id="95">
+                                        <text-property name="text">EffectifOvins </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="96">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <label id="97">
+                                        <text-property name="text">EffectifCaprins </text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="98">
+                                <property name="height">0.4895833333333333in</property>
+                                <cell id="99">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <data id="100">
+                                        <property name="resultSetColumn">Années</property>
+                                    </data>
+                                </cell>
+                                <cell id="101">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <data id="102">
+                                        <property name="resultSetColumn">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</property>
+                                    </data>
+                                </cell>
+                                <cell id="103">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <data id="104">
+                                        <property name="resultSetColumn">Effectif Bovins </property>
+                                    </data>
+                                </cell>
+                                <cell id="105">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <data id="106">
+                                        <property name="resultSetColumn">EffectifOvins </property>
+                                    </data>
+                                </cell>
+                                <cell id="107">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <data id="108">
+                                        <property name="resultSetColumn">EffectifCaprins </property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="20">
+                <property name="height">3.2708333333333335in</property>
+                <cell id="21">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
                     <extended-item extensionName="Chart" id="123">
                         <xml-property name="xmlRepresentation"><![CDATA[<model:ChartWithAxes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute" xmlns:data="http://www.birt.eclipse.org/ChartModelData" xmlns:layout="http://www.birt.eclipse.org/ChartModelLayout" xmlns:model="http://www.birt.eclipse.org/ChartModel" xmlns:type="http://www.birt.eclipse.org/ChartModelType">
   <Version>2.6.1</Version>
@@ -4632,7 +4825,7 @@ PECHE ET ELEVAGE AU MAROC
                         <property name="outputFormat">SVG</property>
                         <property name="inheritColumns">false</property>
                         <property name="height">185.625pt</property>
-                        <property name="width">371.25pt</property>
+                        <property name="width">240pt</property>
                         <property name="dataSet">peche et elevage</property>
                         <list-property name="boundDataColumns">
                             <structure>
@@ -4782,120 +4975,12 @@ PECHE ET ELEVAGE AU MAROC
                         </list-property>
                     </extended-item>
                 </cell>
-                <cell id="19">
-                    <table id="86">
-                        <property name="dataSet">peche et elevage</property>
-                        <list-property name="boundDataColumns">
-                            <structure>
-                                <property name="name">Années</property>
-                                <text-property name="displayName">Années</text-property>
-                                <expression name="expression" type="javascript">dataSetRow["Années"]</expression>
-                                <property name="dataType">string</property>
-                            </structure>
-                            <structure>
-                                <property name="name">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</property>
-                                <text-property name="displayName">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</text-property>
-                                <expression name="expression" type="javascript">dataSetRow["Effectif du cheptel (passage mars-avril) (En milliers de têtes)"]</expression>
-                                <property name="dataType">float</property>
-                            </structure>
-                            <structure>
-                                <property name="name">Effectif Bovins </property>
-                                <text-property name="displayName">Effectif Bovins </text-property>
-                                <expression name="expression" type="javascript">dataSetRow["Effectif Bovins "]</expression>
-                                <property name="dataType">float</property>
-                            </structure>
-                            <structure>
-                                <property name="name">EffectifOvins </property>
-                                <text-property name="displayName">EffectifOvins </text-property>
-                                <expression name="expression" type="javascript">dataSetRow["EffectifOvins "]</expression>
-                                <property name="dataType">float</property>
-                            </structure>
-                            <structure>
-                                <property name="name">EffectifCaprins </property>
-                                <text-property name="displayName">EffectifCaprins </text-property>
-                                <expression name="expression" type="javascript">dataSetRow["EffectifCaprins "]</expression>
-                                <property name="dataType">float</property>
-                            </structure>
-                        </list-property>
-                        <column id="115"/>
-                        <column id="116"/>
-                        <column id="117"/>
-                        <column id="118"/>
-                        <column id="119"/>
-                        <header>
-                            <row id="87">
-                                <cell id="88">
-                                    <label id="89">
-                                        <text-property name="text">Années</text-property>
-                                    </label>
-                                </cell>
-                                <cell id="90">
-                                    <label id="91">
-                                        <text-property name="text">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</text-property>
-                                    </label>
-                                </cell>
-                                <cell id="92">
-                                    <label id="93">
-                                        <text-property name="text">Effectif Bovins </text-property>
-                                    </label>
-                                </cell>
-                                <cell id="94">
-                                    <label id="95">
-                                        <text-property name="text">EffectifOvins </text-property>
-                                    </label>
-                                </cell>
-                                <cell id="96">
-                                    <label id="97">
-                                        <text-property name="text">EffectifCaprins </text-property>
-                                    </label>
-                                </cell>
-                            </row>
-                        </header>
-                        <detail>
-                            <row id="98">
-                                <cell id="99">
-                                    <data id="100">
-                                        <property name="resultSetColumn">Années</property>
-                                    </data>
-                                </cell>
-                                <cell id="101">
-                                    <data id="102">
-                                        <property name="resultSetColumn">Effectif du cheptel (passage mars-avril) (En milliers de têtes)</property>
-                                    </data>
-                                </cell>
-                                <cell id="103">
-                                    <data id="104">
-                                        <property name="resultSetColumn">Effectif Bovins </property>
-                                    </data>
-                                </cell>
-                                <cell id="105">
-                                    <data id="106">
-                                        <property name="resultSetColumn">EffectifOvins </property>
-                                    </data>
-                                </cell>
-                                <cell id="107">
-                                    <data id="108">
-                                        <property name="resultSetColumn">EffectifCaprins </property>
-                                    </data>
-                                </cell>
-                            </row>
-                        </detail>
-                        <footer>
-                            <row id="109">
-                                <cell id="110"/>
-                                <cell id="111"/>
-                                <cell id="112"/>
-                                <cell id="113"/>
-                                <cell id="114"/>
-                            </row>
-                        </footer>
-                    </table>
-                </cell>
+                <cell id="128"/>
             </row>
-            <row id="20">
+            <row id="124">
                 <property name="height">2.9479166666666665in</property>
-                <cell id="21"/>
-                <cell id="22"/>
+                <cell id="125"/>
+                <cell id="126"/>
             </row>
         </grid>
     </body>
